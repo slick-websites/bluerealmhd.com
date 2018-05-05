@@ -3,7 +3,7 @@
 ============================
 :::::: THE BLUE REALM ::::::
 ============================
->>> copyright 2014 sport diver television
+>>> copyright 2018 sport diver television
 -->
 <html>
 	<head>
@@ -993,8 +993,7 @@
 						<p>The Blue Realm is produced by a team of film-makers and expert divers, all of whom have a passion for the sea and our marine environments. The crew has travelled to some of the world's top undersea destinations to capture spectacular images in the High-Definition format. Filming locations included: Papua New Guinea, Palau (Micronesia), South Africa, the Red Sea, the Great Barrier Reef, the Bahamas, Cocos Island (Costa Rica), British Columbia, Texas, Indonesia, the Socorro Archipelago (Mexico), California and Florida.</p>
 						<h2>The Blue Realm features 13 High-Definition episodes</h2>
 						<p>
-							You can view previews of each program in the <a scone-page href="episodes">episodes section</a>
-							. The series has run on Discovery HD Theater, Discovery HD International, National Geographic International and currently airs on Discovery World, Animal Planet, TV Ontario and Knowledge Network. Production wrapped in 2013.
+							The series has run on Discovery HD Theater, Discovery HD International, National Geographic International and currently airs on Discovery World, Animal Planet, TV Ontario and Knowledge Network. Production wrapped in 2013.
 						</p>
 						<p>
 							The Blue Realm Series is distributed by <a href="http://www.filmoption.com/" target="_blank" style="font-weight:bold">Filmoption International</a>
@@ -1381,7 +1380,6 @@
 
 				</div>
 			</section>
-			
 
 			</script>
 		</main>
@@ -1398,7 +1396,7 @@
 				</div>
 				<div class="cell n2">
 					<p>
-						<strong>&copy;2014 Sport Diver Television</strong>
+						<strong>&copy;2018 Sport Diver Television</strong>
 					</p>
 					<p>
 						Distributed by <a target="_blank" href="http://www.filmoption.com/">Filmoption International</a>
@@ -1407,9 +1405,9 @@
 					<p>
 						Website by <a href="http://chasemoskal.com">Chase Moskal</a>
 					</p>
-					<div class="optimize-info">
+					<!-- <div class="optimize-info">
 						<p class="optimize-stat" data-stat="speed">
-							<em>--</em>
+							<em>-</em>
 							connection detected
 						</p>
 						<p class="optimize-stat" data-stat="mobile">
@@ -1417,10 +1415,10 @@
 							detected
 						</p>
 						<p class="optimize-switch-quality">
-							<a>--</a>
+							<a>-</a>
 						</p>
-						<!--<p class="optimize-switch-mobile"><a>--</a></p>-->
-					</div>
+						<p class="optimize-switch-mobile"><a>--</a></p>
+					</div> -->
 				</div>
 			</div>
 		</footer>
@@ -1880,13 +1878,15 @@
 				,
 				t.push = function(e) {
 					var n = t.evaluate(e);
+					t.match = n
 					n.flip()
-					return n == t.match ? !1 : ("" === e && (e = "./"),
+					t.navigate.fire()
+					return true
 					// history.pushState({
 					// 	label: n.label
 					// }, n.title, e),
 					// a.trigger("popstate"),
-					!0)
+					// !0)
 				}
 				,
 				t.navigate = new scone.Event(t.match),
@@ -1962,12 +1962,19 @@
 				}),
 				e.poll = function(t, o, n) {
 					return t || (t = e.threshold),
-					e.load_time = void 0 !== o && null !== o ? o : "performance"in window ? (e.load_mark - performance.timing.navigationStart) / 1e3 : null,
+					e.load_time = 0,
 					e.mobile = void 0 !== n && null !== n ? n : /iPhone|iPod|Android|Blackberry|IEMobile|Opera Mini|WebOS|Mobile/i.test(navigator.userAgent),
 					e.fast = null !== e.load_time ? e.load_time <= t ? !0 : !1 : null,
 					e.slow = e.fast,
 					e.poll.event.trigger(e),
 					e
+					// return t || (t = e.threshold),
+					// e.load_time = void 0 !== o && null !== o ? o : "performance"in window ? (e.load_mark - performance.timing.navigationStart) / 1e3 : null,
+					// e.mobile = void 0 !== n && null !== n ? n : /iPhone|iPod|Android|Blackberry|IEMobile|Opera Mini|WebOS|Mobile/i.test(navigator.userAgent),
+					// e.fast = null !== e.load_time ? e.load_time <= t ? !0 : !1 : null,
+					// e.slow = e.fast,
+					// e.poll.event.trigger(e),
+					// e
 				}
 				,
 				e.poll.event = new scone.Event(e),
